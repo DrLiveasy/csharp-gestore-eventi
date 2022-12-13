@@ -11,7 +11,7 @@ namespace GestoreEventi
         #region PROPRIETA E STATO
         //Proprietà
         private string Titolo;
-        private string Data;
+        private DateTime Data;
         //Stato
         private int CapienzaMax;
         private int PostiPrenotati;
@@ -19,7 +19,7 @@ namespace GestoreEventi
         #endregion
 
         #region Costruttori
-        public Evento(string titolo, string data, int capienzaMax)
+        public Evento(string titolo, DateTime data, int capienzaMax)
         {
             SetTitolo1(titolo);
             SetData1(data);
@@ -46,15 +46,17 @@ namespace GestoreEventi
                 this.Titolo = value;
             }
         }
-        public string GetData1()
+        public DateTime GetData1()
         {
-            return Data;
+            return thi.Data;
         }
-        public void SetData1(string value)
+        public void SetData1(DateTime value)
         {
             DateTime dataOraAttuale = DateTime.Now;
+
             DateTime data = DateTime.Parse(value);
-            if (value == "")
+
+            if (value != "")
             {
                 throw new Exception("la data non può essere vuota!");
             }

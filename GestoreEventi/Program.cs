@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using GestoreEventi;
+using System;
 
 Console.WriteLine("Hello, World!");
 
@@ -10,5 +11,14 @@ string dataStringa = Console.ReadLine();
 Console.Write("Inserisci il numero di posti totali: ");
 int capienzaMax = int.Parse(Console.ReadLine());
 
-Evento EventoInput = new Evento(nomeEvento, dataStringa, capienzaMax);
+DateTime dataInserita = DateTime.Parse(dataStringa);
 
+Evento eventoInput = new Evento(nomeEvento, dataInserita, capienzaMax);
+
+Console.Write("Qanti posti desideri prenotare? ");
+int postiDaPrenotare = int.Parse(Console.ReadLine());
+
+eventoInput.PrenotaPosti(postiDaPrenotare);
+
+Console.WriteLine("Numero di posto prenotati : "+eventoInput.GetPostiPrenotati1());
+Console.WriteLine("numero di posti disponibili = " + (eventoInput.GetPostiPrenotati1() - eventoInput.GetCapienzaMax1()));
