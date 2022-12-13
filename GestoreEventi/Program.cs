@@ -11,7 +11,6 @@ string dataStringa = Console.ReadLine();
 Console.Write("Inserisci il numero di posti totali: ");
 int capienzaMax = int.Parse(Console.ReadLine());
 
-Console.WriteLine();
 Evento eventoInput = new Evento(nomeEvento, dataStringa, capienzaMax);
 
 Console.Write("Qanti posti desideri prenotare? ");
@@ -20,4 +19,4 @@ int postiDaPrenotare = int.Parse(Console.ReadLine());
 eventoInput.PrenotaPosti(postiDaPrenotare);
 
 Console.WriteLine("Numero di posto prenotati : "+eventoInput.GetPostiPrenotati1());
-Console.WriteLine("numero di posti disponibili = " + (eventoInput.GetPostiPrenotati1() - eventoInput.GetCapienzaMax1()));
+Console.WriteLine("numero di posti disponibili = " + (eventoInput.GetCapienzaMax1() - eventoInput.GetPostiPrenotati1()));

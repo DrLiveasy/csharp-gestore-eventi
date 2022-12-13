@@ -99,7 +99,7 @@ namespace GestoreEventi
         public void PrenotaPosti(int value)
         {
             DateTime dataOraAttuale = DateTime.Now;
-            if (this.Data > dataOraAttuale)
+            if (this.Data < dataOraAttuale)
             {
                 throw new Exception("L'evento e già passato non si può prenotare posti!");
             }else if (this.CapienzaMax == this.PostiPrenotati || this.CapienzaMax < value)
@@ -114,7 +114,7 @@ namespace GestoreEventi
         public void DisdiciPosti(int value)
         {
             DateTime dataOraAttuale = DateTime.Now;
-            if (this.Data > dataOraAttuale)
+            if (this.Data < dataOraAttuale)
             {
                 throw new Exception("Evento già passato , non si può fare questa operazion!");
             }
