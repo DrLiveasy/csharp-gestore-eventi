@@ -101,16 +101,32 @@ namespace GestoreEventi
             if (data > dataOraAttuale)
             {
                 throw new Exception("L'evento e già passato non si può prenotare posti!");
-            }else if (this.CapienzaMax < value)
+            }else if (this.CapienzaMax == this.PostiPrenotati || this.CapienzaMax < value)
             {
                 throw new Exception("mi dispiace il numero di posti richiesti non è disponibile !");
             }
             else
             {
-                this.CapienzaMax -= value;
+                this.PostiPrenotati += value;
             }
         }
-
+        public void DisdiciPosti(int value)
+        {
+            DateTime dataOraAttuale = DateTime.Now;
+            DateTime data = DateTime.Parse(this.Data);
+            if (data > dataOraAttuale)
+            {
+                throw new Exception("Evento già passato , non si può fare questa operazion!");
+            }
+            else if (this.PostiPrenotati < value)
+            {
+                throw new Exception("non ci sono posti sufficienti da disdire!");
+            }
+            else
+            {
+                this.PostiPrenotati -= value;
+            }
+        }
         #endregion
 
 
