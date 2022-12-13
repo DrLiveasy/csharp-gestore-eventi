@@ -38,6 +38,7 @@ while (true)
 
         Console.WriteLine("Numero di posto prenotati = " + eventoInput.GetPostiPrenotati1());
         Console.WriteLine("numero di posti disponibili = " + (eventoInput.GetCapienzaMax1() - eventoInput.GetPostiPrenotati1()));
+        Console.WriteLine(eventoInput.ToString());
         break;
     }
     else
