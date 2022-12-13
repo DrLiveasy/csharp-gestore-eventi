@@ -127,6 +127,10 @@ namespace GestoreEventi
                 this.PostiPrenotati -= value;
             }
         }
+        public override string ToString()
+        {
+            return $"Data Evento: {this.Data}\t Titolo Evento: {this.Titolo}";
+        }
         #endregion
 
 
