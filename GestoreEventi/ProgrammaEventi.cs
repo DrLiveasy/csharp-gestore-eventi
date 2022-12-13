@@ -61,6 +61,13 @@ namespace GestoreEventi
 
             return EventiNellaStessaData;
         }
+        public static void StampaLista(List<Evento> listaEventi)
+        {
+            foreach (Evento evento in listaEventi)
+            {
+                Console.WriteLine(evento.ToString()); 
+            }
+        }
 
         #endregion
 
