@@ -134,15 +134,6 @@ namespace GestoreEventi
         #endregion
 
 
-
-
-
-
-
-
-
-
-
     }
 
 }
