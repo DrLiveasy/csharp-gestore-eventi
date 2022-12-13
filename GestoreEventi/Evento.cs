@@ -19,7 +19,7 @@ namespace GestoreEventi
         #endregion
 
         #region Costruttori
-        public Evento(string titolo, DateTime data, int capienzaMax)
+        public Evento(string titolo, string data, int capienzaMax)
         {
             SetTitolo1(titolo);
             SetData1(data);
@@ -48,25 +48,25 @@ namespace GestoreEventi
         }
         public DateTime GetData1()
         {
-            return thi.Data;
+            return this.Data;
         }
-        public void SetData1(DateTime value)
+        public void SetData1(string value)
         {
             DateTime dataOraAttuale = DateTime.Now;
 
-            DateTime data = DateTime.Parse(value);
+            DateTime dataInserita = DateTime.ParseExact(value, "dd/MM/yyyy", null);
 
-            if (value != "")
+            if (value == "")
             {
                 throw new Exception("la data non può essere vuota!");
             }
-            else if (dataOraAttuale > data)
+            else if (dataOraAttuale > dataInserita)
             {
                 throw new Exception("non puoi inserire una data passata!");
             }
             else
             {
-                this.Data = value;
+                this.Data = dataInserita;
             }
         }
         public int GetCapienzaMax1()
@@ -99,8 +99,7 @@ namespace GestoreEventi
         public void PrenotaPosti(int value)
         {
             DateTime dataOraAttuale = DateTime.Now;
-            DateTime data = DateTime.Parse(this.Data);
-            if (data > dataOraAttuale)
+            if (this.Data > dataOraAttuale)
             {
                 throw new Exception("L'evento e già passato non si può prenotare posti!");
             }else if (this.CapienzaMax == this.PostiPrenotati || this.CapienzaMax < value)
@@ -115,8 +114,7 @@ namespace GestoreEventi
         public void DisdiciPosti(int value)
         {
             DateTime dataOraAttuale = DateTime.Now;
-            DateTime data = DateTime.Parse(this.Data);
-            if (data > dataOraAttuale)
+            if (this.Data > dataOraAttuale)
             {
                 throw new Exception("Evento già passato , non si può fare questa operazion!");
             }

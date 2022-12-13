@@ -11,9 +11,8 @@ string dataStringa = Console.ReadLine();
 Console.Write("Inserisci il numero di posti totali: ");
 int capienzaMax = int.Parse(Console.ReadLine());
 
-DateTime dataInserita = DateTime.Parse(dataStringa);
-
-Evento eventoInput = new Evento(nomeEvento, dataInserita, capienzaMax);
+Console.WriteLine();
+Evento eventoInput = new Evento(nomeEvento, dataStringa, capienzaMax);
 
 Console.Write("Qanti posti desideri prenotare? ");
 int postiDaPrenotare = int.Parse(Console.ReadLine());
