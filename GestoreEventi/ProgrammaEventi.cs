@@ -66,12 +66,12 @@ namespace GestoreEventi
         {
             foreach (Evento evento in listaEventi)
             {
-                Console.WriteLine(evento.ToString()); 
+                Console.WriteLine(evento.ToString());
             }
         }
-        
-        public int EventiPresenti() 
-        { 
+
+        public int EventiPresenti()
+        {
             int contaEventi = this.eventi.Count;
 
             return contaEventi;
@@ -82,8 +82,14 @@ namespace GestoreEventi
         }
         public override string ToString()
         {
-            
-            return this.Titolo + eventi.ToString();
+            string str = "";
+
+            foreach(Evento evento in this.eventi)
+            {
+                str += "\t" + evento.ToString() + "\n";
+            }
+
+            return this.Titolo +"\n"+ str;
         }
         #endregion
 

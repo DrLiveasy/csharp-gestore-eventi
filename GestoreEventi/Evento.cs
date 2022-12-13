@@ -129,7 +129,9 @@ namespace GestoreEventi
         }
         public override string ToString()
         {
-            return $"Data Evento: {this.Data}\t Titolo Evento: {this.Titolo}";
+            string StrDateOnly = this.Data.ToString("d");
+
+            return $"Data Evento: {StrDateOnly}\t Titolo Evento: {this.Titolo}";
         }
         #endregion
 
