@@ -74,6 +74,11 @@ namespace GestoreEventi
 
             return contaEventi;
         }
+        public void SvuotaListaEventi()
+        {
+            this.eventi.Clear();
+        }
+
         #endregion
 
 
