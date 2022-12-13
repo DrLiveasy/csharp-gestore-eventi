@@ -40,6 +40,14 @@ namespace GestoreEventi
         }
         #endregion
 
+        #region Metodi
+        public void AggiungiEvento(Evento evento)
+        {
+            eventi.Add(evento);
+        }
+
+        #endregion
+
 
     }
 }
