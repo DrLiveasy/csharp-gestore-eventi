@@ -54,20 +54,21 @@ try
 {
     Console.Write("Inserisci il nome del tuo programma Eventi: ");
     string InputNomeProgramma = Console.ReadLine();
-    Console.WriteLine("Indica il numero di eventi da inserire: ");
+    Console.Write("Indica il numero di eventi da inserire: ");
     int numeroDiEventiDaInserire = int.Parse(Console.ReadLine());
 
     ProgrammaEventi ProgrammaUtente = new ProgrammaEventi(InputNomeProgramma);
 
     for (int i = 0; i < numeroDiEventiDaInserire;i++)
     {
+        Console.WriteLine("\n");
         Console.Write("Inserisci il nome dell'evento: ");
         string nomeEvento = Console.ReadLine();
         Console.Write("Inserisci data dell'evento (gg/mm/yyyy): ");
         string dataStringa = Console.ReadLine();
         Console.Write("Inserisci il numero di posti totali: ");
         int capienzaMax = int.Parse(Console.ReadLine());
-
+       
         Evento eventoInput = new Evento(nomeEvento, dataStringa, capienzaMax);
 
         ProgrammaUtente.AggiungiEvento(eventoInput);
@@ -76,13 +77,21 @@ try
 
     Console.WriteLine("il numero di eventi nel programma è: "+ProgrammaUtente.EventiPresenti());
 
+    Console.WriteLine("Ecco il tuo programma eventi: ");
 
+    Console.WriteLine(ProgrammaUtente.ToString());
 
+    Console.Write("inserisci una data per sapere che eventi ci saranno (gg/mm/yyyy): ");
+    string dataStringa2 = Console.ReadLine();
+
+    DateTime dataInserita = DateTime.ParseExact(dataStringa2, "dd/MM/yyyy", null);
+
+    ProgrammaUtente.RistetuisciListaEventiConStessaData(dataInserita);
 
 
 
 }
-catch(Exception e)
+catch (Exception e)
 {
     Console.WriteLine(e.Message);
 }
