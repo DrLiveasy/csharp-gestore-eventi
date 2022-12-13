@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -61,13 +62,14 @@ namespace GestoreEventi
 
             return EventiNellaStessaData;
         }
-        public static void StampaLista(List<Evento> listaEventi)
+        public static void StampaListaInConsole(List<Evento> listaEventi)
         {
             foreach (Evento evento in listaEventi)
             {
                 Console.WriteLine(evento.ToString()); 
             }
         }
+        
         public int EventiPresenti() 
         { 
             int contaEventi = this.eventi.Count;
@@ -78,7 +80,11 @@ namespace GestoreEventi
         {
             this.eventi.Clear();
         }
-
+        public override string ToString()
+        {
+            
+            return this.Titolo + eventi.ToString();
+        }
         #endregion
 
 
