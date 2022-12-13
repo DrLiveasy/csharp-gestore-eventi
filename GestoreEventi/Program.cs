@@ -50,5 +50,39 @@ while (true)
 
 //------------------MILESTONE 4------------------
 
-Console.Write("Inserisci il nome del tuo programma Eventi: ");
-string InputNomeProgramma = Console.ReadLine();
+try
+{
+    Console.Write("Inserisci il nome del tuo programma Eventi: ");
+    string InputNomeProgramma = Console.ReadLine();
+    Console.WriteLine("Indica il numero di eventi da inserire: ");
+    int numeroDiEventiDaInserire = int.Parse(Console.ReadLine());
+
+    ProgrammaEventi ProgrammaUtente = new ProgrammaEventi(InputNomeProgramma);
+
+    for (int i = 0; i < numeroDiEventiDaInserire;i++)
+    {
+        Console.Write("Inserisci il nome dell'evento: ");
+        string nomeEvento = Console.ReadLine();
+        Console.Write("Inserisci data dell'evento (gg/mm/yyyy): ");
+        string dataStringa = Console.ReadLine();
+        Console.Write("Inserisci il numero di posti totali: ");
+        int capienzaMax = int.Parse(Console.ReadLine());
+
+        Evento eventoInput = new Evento(nomeEvento, dataStringa, capienzaMax);
+
+        ProgrammaUtente.AggiungiEvento(eventoInput);
+
+    }
+
+    Console.WriteLine("il numero di eventi nel programma è: "+ProgrammaUtente.EventiPresenti());
+
+
+
+
+
+
+}
+catch(Exception e)
+{
+    Console.WriteLine(e.Message);
+}
