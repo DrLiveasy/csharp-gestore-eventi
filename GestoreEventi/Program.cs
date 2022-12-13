@@ -88,7 +88,7 @@ try
 
     ProgrammaUtente.StampaListaInConsole1(ProgrammaUtente.RistetuisciListaEventiConStessaData(dataInserita));
 
-    
+    ProgrammaUtente.SvuotaListaEventi();
 
 }
 catch (Exception e)
