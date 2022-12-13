@@ -2,26 +2,27 @@
 using GestoreEventi;
 using System;
 //------------------MILESTONE 2------------------
+/*
 try 
 {
-Console.WriteLine("Hello, World!");
+    Console.WriteLine("Hello, World!");
 
-Console.Write("Inserisci il nome dell'evento: ");
-string nomeEvento = Console.ReadLine();
-Console.Write("Inserisci data dell'evento (gg/mm/yyyy): ");
-string dataStringa = Console.ReadLine();
-Console.Write("Inserisci il numero di posti totali: ");
-int capienzaMax = int.Parse(Console.ReadLine());
+    Console.Write("Inserisci il nome dell'evento: ");
+    string nomeEvento = Console.ReadLine();
+    Console.Write("Inserisci data dell'evento (gg/mm/yyyy): ");
+    string dataStringa = Console.ReadLine();
+    Console.Write("Inserisci il numero di posti totali: ");
+    int capienzaMax = int.Parse(Console.ReadLine());
 
-Evento eventoInput = new Evento(nomeEvento, dataStringa, capienzaMax);
+    Evento eventoInput = new Evento(nomeEvento, dataStringa, capienzaMax);
 
-Console.Write("Qanti posti desideri prenotare? ");
-int postiDaPrenotare = int.Parse(Console.ReadLine());
+    Console.Write("Qanti posti desideri prenotare? ");
+    int postiDaPrenotare = int.Parse(Console.ReadLine());
 
-eventoInput.PrenotaPosti(postiDaPrenotare);
+    eventoInput.PrenotaPosti(postiDaPrenotare);
 
-Console.WriteLine("Numero di posto prenotati = "+eventoInput.GetPostiPrenotati1());
-Console.WriteLine("numero di posti disponibili = " + (eventoInput.GetCapienzaMax1() - eventoInput.GetPostiPrenotati1()));
+    Console.WriteLine("Numero di posto prenotati = "+eventoInput.GetPostiPrenotati1());
+    Console.WriteLine("numero di posti disponibili = " + (eventoInput.GetCapienzaMax1() - eventoInput.GetPostiPrenotati1()));
 
     while (true)
     {
@@ -53,12 +54,11 @@ Console.WriteLine("numero di posti disponibili = " + (eventoInput.GetCapienzaMax
 catch(Exception e)
 {
     Console.WriteLine(e.Message);
-}
-
+}*/
 
 
 //------------------MILESTONE 4------------------
-/*
+
 try
 {
     Console.Write("Inserisci il nome del tuo programma Eventi: ");
@@ -83,7 +83,7 @@ try
 
         ProgrammaUtente.AggiungiEvento(eventoInput);
     }*/
-/*
+
     while (ProgrammaUtente.EventiPresenti()!=numeroDiEventiDaInserire)
     {
         Console.WriteLine("\n");
@@ -122,4 +122,4 @@ try
 catch (Exception e)
 {
     Console.WriteLine(e.Message);
-}*/
+}
