@@ -1,7 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using GestoreEventi;
 using System;
-
+//------------------MILESTONE 2------------------
+/*
 Console.WriteLine("Hello, World!");
 
 Console.Write("Inserisci il nome dell'evento: ");
@@ -45,4 +46,9 @@ while (true)
     {
         Console.WriteLine("Perfavore rispondere solo con (si o no)");
     }
-}
+}*/
+
+//------------------MILESTONE 4------------------
+
+Console.Write("Inserisci il nome del tuo programma Eventi: ");
+string InputNomeProgramma = Console.ReadLine();
