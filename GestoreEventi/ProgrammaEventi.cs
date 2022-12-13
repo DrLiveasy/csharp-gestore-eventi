@@ -91,13 +91,7 @@ namespace GestoreEventi
 
             return this.Titolo +"\n"+ str;
         }
-        public void StampaListaInConsole1(List<Evento> listaEventi)
-        {
-            foreach (Evento evento in listaEventi)
-            {
-                Console.WriteLine(evento.ToString());
-            }
-        }
+        
         #endregion
 
 

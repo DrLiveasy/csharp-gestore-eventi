@@ -86,10 +86,10 @@ try
 
     DateTime dataInserita = DateTime.ParseExact(dataStringa2, "dd/MM/yyyy", null);
 
-    ProgrammaUtente.StampaListaInConsole1(ProgrammaUtente.RistetuisciListaEventiConStessaData(dataInserita));
+    ProgrammaEventi.StampaListaInConsole(ProgrammaUtente.RistetuisciListaEventiConStessaData(dataInserita));
 
     ProgrammaUtente.SvuotaListaEventi();
-
+    
 }
 catch (Exception e)
 {
