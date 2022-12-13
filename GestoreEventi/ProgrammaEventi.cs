@@ -68,7 +68,12 @@ namespace GestoreEventi
                 Console.WriteLine(evento.ToString()); 
             }
         }
+        public int EventiPresenti() 
+        { 
+            int contaEventi = this.eventi.Count;
 
+            return contaEventi;
+        }
         #endregion
 
 
