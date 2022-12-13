@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,6 +45,21 @@ namespace GestoreEventi
         public void AggiungiEvento(Evento evento)
         {
             eventi.Add(evento);
+        }
+        public List<Evento> RistetuisciListaEventiConStessaData(DateTime data)
+        {
+            List<Evento> EventiNellaStessaData = new List<Evento>();
+
+            foreach(Evento evento in eventi)
+            {
+                DateTime dataEvento = evento.GetData1();
+                if ( dataEvento == data)
+                {
+                    EventiNellaStessaData.Add(evento);
+                }
+            }
+
+            return EventiNellaStessaData;
         }
 
         #endregion
