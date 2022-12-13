@@ -18,5 +18,30 @@ int postiDaPrenotare = int.Parse(Console.ReadLine());
 
 eventoInput.PrenotaPosti(postiDaPrenotare);
 
-Console.WriteLine("Numero di posto prenotati : "+eventoInput.GetPostiPrenotati1());
+Console.WriteLine("Numero di posto prenotati = "+eventoInput.GetPostiPrenotati1());
 Console.WriteLine("numero di posti disponibili = " + (eventoInput.GetCapienzaMax1() - eventoInput.GetPostiPrenotati1()));
+
+while (true) 
+{
+    Console.WriteLine("vuoi disdire posti? (si/no)?");
+    string risposta = Console.ReadLine();
+    if (risposta == "si")
+    {
+        Console.WriteLine("Indica il numero di posti da disdire: ");
+        int postiDaDisdire = int.Parse(Console.ReadLine());
+        eventoInput.DisdiciPosti(postiDaDisdire);
+        Console.WriteLine("Numero di posto prenotati = " + eventoInput.GetPostiPrenotati1());
+        Console.WriteLine("numero di posti disponibili = " + (eventoInput.GetCapienzaMax1() - eventoInput.GetPostiPrenotati1()));
+    }else if (risposta == "no")
+    { 
+        Console.WriteLine("Ok va bene!");
+
+        Console.WriteLine("Numero di posto prenotati = " + eventoInput.GetPostiPrenotati1());
+        Console.WriteLine("numero di posti disponibili = " + (eventoInput.GetCapienzaMax1() - eventoInput.GetPostiPrenotati1()));
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Perfavore rispondere solo con (si o no)");
+    }
+}
