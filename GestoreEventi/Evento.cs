@@ -19,12 +19,13 @@ namespace GestoreEventi
         #endregion
 
         #region Costruttori
-        public Evento(string titolo, string data, int capienzaMax, int postiPrenotati)
+        public Evento(string titolo, string data, int capienzaMax)
         {
-            Titolo = titolo;
-            Data = data;
-            CapienzaMax = capienzaMax;
-            PostiPrenotati = postiPrenotati;
+            SetTitolo1(titolo);
+            SetData1(data);
+            SetCapienzaMax1(capienzaMax);
+
+            this.PostiPrenotati = 0;
         }
 
         #endregion
@@ -73,7 +74,7 @@ namespace GestoreEventi
 
         public void SetCapienzaMax1(int value)
         {
-            if (value < 0 ) 
+            if ( value < 0)
             {
                 throw new Exception("la capienza massima non può essere un numero negativo !");
             }
