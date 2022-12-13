@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace GestoreEventi
 {
-    internal class Evento
+    public class Evento
     {
+        #region PROPRIETA E STATO
+        //Proprietà
+        private string Titolo;
+        private string Data;
+        //Stato
+        private string CapienzaMax;
+        private string PostiPrenotati;
+        #endregion
     }
 }
